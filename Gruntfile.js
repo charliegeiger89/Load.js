@@ -53,6 +53,13 @@ module.exports = function(grunt) {
         // Concat files
         concat: {
             main: {
+                options: {
+                    banner:'/*\n' +
+                        '  * <%= pkg.name %> v<%= pkg.version %>\n' +
+                        '  * \u00A9 Copyright <%= pkg.author %> <%= grunt.template.today("yyyy") %>\n' +
+                        '  * Built on: <%= grunt.template.today("mm-dd-yyyy") %>\n'+
+                        ' */\n\n'
+                },
                 src: ['src/scripts/*.js'],
                 dest: 'build/<%=  pkg.name %>.<%= pkg.version %>.js'
             }
@@ -73,7 +80,7 @@ module.exports = function(grunt) {
                         '  * <%= pkg.name %> v<%= pkg.version %>\n' +
                         '  * \u00A9 Copyright <%= pkg.author %> <%= grunt.template.today("yyyy") %>\n' +
                         '  * Built on: <%= grunt.template.today("mm-dd-yyyy") %>\n'+
-                        ' */'
+                        ' */\n\n'
                 },
                 files: {
                     'build/<%=  pkg.name %>.<%= pkg.version %>.min.js': ['build/<%=  pkg.name %>.<%= pkg.version %>.js'],

@@ -1,3 +1,9 @@
+/*
+  * Load v0.0.1
+  * © Copyright Charlie Geiger 2014
+  * Built on: 08-19-2014
+ */
+
 (function() {
     'use strict';
 
